@@ -1,7 +1,5 @@
 # O2M-UDA: Unsupervised Dynamic Domain Adaptation for One-to-Multiple Medical Image Segmentation
-
-<font color="red">UPDATE: </font>
-We have opened the PyTorch implementation of DyDA and planned to open the MindSpore version in the near future.
+**UPDATE**: We have opened the PyTorch implementation of DyDA and planned to open the MindSpore version in the near future.
 
 One-to-multiple medical image segmentation aims to directly test a segmentation model
 trained with the medical images of a one-domain site on those of a multiple-domain
@@ -31,7 +29,9 @@ Southeast University
 + [PyTorch/(https://github.com/ZoeyJiang/DyDA/tree/main/PyTorch)
 + [Mindspore/](https://github.com/ZoeyJiang/DyDA/tree/main/MindSpore)
 
-If you use DyDA or some part of the code, please cite (see bibtex): **O2M-UDA: Unsupervised dynamic domain adaptation for one-to-multiple medical image segmentation** https://doi.org/10.1016/j.knosys.2023.110378
+If you use DyDA or some part of the code, please cite (see bibtex):
+
+**O2M-UDA: Unsupervised dynamic domain adaptation for one-to-multiple medical image segmentation** https://doi.org/10.1016/j.knosys.2023.110378
 
 ## Acknowledgement
 This research was supported by the National Natural Science Foundation under grants (61828101), CAAI-Huawei MindSpore Open Fund and Scientific Research Foundation of Graduate School of Southeast University (YBPY2139). We thank the Big Data Computing Center of Southeast University for providing the facility support on the numerical calculations in this paper. 
