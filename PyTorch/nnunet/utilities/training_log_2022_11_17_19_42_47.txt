@@ -1,0 +1,846 @@
+Starting... 
+2022-11-17 19:42:47.482682: loading checkpoint /seu_share/home/ygy_jzy/olddata/ygy_jzy/DyDE/dataset/trained_models/Task003_mixed_jph_kits/dyde/model_latest.model train= True 
+2022-11-17 19:42:48.989739: lr: (-0.014203+0.004615j) 
+2022-11-17 19:42:49.027482: Unable to plot network architecture: 
+2022-11-17 19:42:49.027626: No module named 'hiddenlayer' 
+2022-11-17 19:42:49.027689: 
+printing the network instead:
+ 
+2022-11-17 19:42:49.027735: Generic_UNet(
+  (conv_blocks_localization): ModuleList(
+    (0): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(640, 320, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (1): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(512, 256, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(256, 256, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (2): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(256, 128, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(128, 128, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (3): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(128, 64, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(64, 64, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+    (4): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(64, 32, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(32, 32, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (conv_blocks_context): ModuleList(
+    (0): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(1, 32, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(32, 32, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (1): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(32, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(64, 64, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (2): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(64, 128, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(128, 128, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (3): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(128, 256, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(256, 256, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (4): StackedConvLayers(
+      (blocks): Sequential(
+        (0): ConvDropoutNormNonlin(
+          (conv): Conv3d(256, 320, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+        (1): ConvDropoutNormNonlin(
+          (conv): Conv3d(320, 320, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+          (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+          (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+        )
+      )
+    )
+    (5): Sequential(
+      (0): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=[3, 3, 3], stride=[2, 2, 1], padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+      (1): StackedConvLayers(
+        (blocks): Sequential(
+          (0): ConvDropoutNormNonlin(
+            (conv): Conv3d(320, 320, kernel_size=[3, 3, 3], stride=(1, 1, 1), padding=[1, 1, 1])
+            (instnorm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+            (lrelu): LeakyReLU(negative_slope=0.01, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (td): ModuleList()
+  (tu): ModuleList(
+    (0): ConvTranspose3d(320, 320, kernel_size=[2, 2, 1], stride=[2, 2, 1], bias=False)
+    (1): ConvTranspose3d(320, 256, kernel_size=[2, 2, 2], stride=[2, 2, 2], bias=False)
+    (2): ConvTranspose3d(256, 128, kernel_size=[2, 2, 2], stride=[2, 2, 2], bias=False)
+    (3): ConvTranspose3d(128, 64, kernel_size=[2, 2, 2], stride=[2, 2, 2], bias=False)
+    (4): ConvTranspose3d(64, 32, kernel_size=[2, 2, 2], stride=[2, 2, 2], bias=False)
+  )
+  (seg_outputs): ModuleList(
+    (0): Conv3d(320, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (1): Conv3d(256, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (2): Conv3d(128, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (3): Conv3d(64, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (4): Conv3d(32, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+  )
+) 
+2022-11-17 19:42:49.034918: 
+ 
+2022-11-17 19:42:50.757356: lr: 0.003494 
+2022-11-17 19:42:50.757584: --------------------------------------
+DCSS cycle  1 
+Start inference...... 
+2022-11-17 20:03:39.428923: inference done. Now waiting for the segmentation export to finish... 
+2022-11-17 20:03:39.434193: <multiprocessing.pool.MapResult object at 0x2b28bed68be0> 
+2022-11-17 20:03:39.434378: <multiprocessing.pool.MapResult object at 0x2b28ad024d68> 
+2022-11-17 20:03:39.434482: <multiprocessing.pool.MapResult object at 0x2b28bef562b0> 
+2022-11-17 20:03:39.434576: <multiprocessing.pool.MapResult object at 0x2b28bef60358> 
+2022-11-17 20:03:39.434667: <multiprocessing.pool.MapResult object at 0x2b28bef63160> 
+2022-11-17 20:03:39.434758: <multiprocessing.pool.MapResult object at 0x2b28bef5a400> 
+2022-11-17 20:03:39.434858: <multiprocessing.pool.MapResult object at 0x2b28bef605f8> 
+2022-11-17 20:03:39.434949: <multiprocessing.pool.MapResult object at 0x2b28bef687b8> 
+2022-11-17 20:03:39.435038: <multiprocessing.pool.MapResult object at 0x2b28bef637f0> 
+2022-11-17 20:03:39.435127: <multiprocessing.pool.MapResult object at 0x2b28bef60c88> 
+2022-11-17 20:03:39.435214: <multiprocessing.pool.MapResult object at 0x2b28bef5abe0> 
+2022-11-17 20:03:39.435304: <multiprocessing.pool.MapResult object at 0x2b28bef56898> 
+2022-11-17 20:03:39.435392: <multiprocessing.pool.MapResult object at 0x2b28bef60e80> 
+2022-11-17 20:03:39.435477: <multiprocessing.pool.MapResult object at 0x2b28bef687f0> 
+2022-11-17 20:03:39.435564: <multiprocessing.pool.MapResult object at 0x2b28bef63550> 
+2022-11-17 20:03:39.435651: <multiprocessing.pool.MapResult object at 0x2b28bef5a940> 
+2022-11-17 20:03:39.435736: <multiprocessing.pool.MapResult object at 0x2b28bef56940> 
+2022-11-17 20:03:39.435822: <multiprocessing.pool.MapResult object at 0x2b28bef60f28> 
+2022-11-17 20:03:39.435923: <multiprocessing.pool.MapResult object at 0x2b28bef60940> 
+2022-11-17 20:03:39.436009: <multiprocessing.pool.MapResult object at 0x2b28bef639e8> 
+2022-11-17 20:03:39.436096: <multiprocessing.pool.MapResult object at 0x2b28bef68ba8> 
+2022-11-17 20:03:39.436183: <multiprocessing.pool.MapResult object at 0x2b28bef5a898> 
+2022-11-17 20:03:39.436268: <multiprocessing.pool.MapResult object at 0x2b28bef56dd8> 
+2022-11-17 20:03:39.436353: <multiprocessing.pool.MapResult object at 0x2b28bef5afd0> 
+2022-11-17 20:03:39.436439: <multiprocessing.pool.MapResult object at 0x2b28bef5add8> 
+2022-11-17 20:03:39.436524: <multiprocessing.pool.MapResult object at 0x2b28bef56e80> 
+2022-11-17 20:03:39.436611: <multiprocessing.pool.MapResult object at 0x2b28bef56208> 
+2022-11-17 20:03:39.436697: <multiprocessing.pool.MapResult object at 0x2b28bef685f8> 
+2022-11-17 20:03:39.436783: <multiprocessing.pool.MapResult object at 0x2b28bef63c88> 
+2022-11-17 20:03:39.436880: <multiprocessing.pool.MapResult object at 0x2b28bef63dd8> 
+2022-11-17 20:03:39.436967: <multiprocessing.pool.MapResult object at 0x2b28bef68a90> 
+2022-11-17 20:03:39.437053: <multiprocessing.pool.MapResult object at 0x2b28bef68ef0> 
+2022-11-17 20:03:39.437138: <multiprocessing.pool.MapResult object at 0x2b28bef68828> 
+2022-11-17 20:03:39.437225: <multiprocessing.pool.MapResult object at 0x2b28bef68fd0> 
+2022-11-17 20:03:39.437314: <multiprocessing.pool.MapResult object at 0x2b28bef68400> 
+2022-11-17 20:03:39.437402: <multiprocessing.pool.MapResult object at 0x2b28befdc780> 
+2022-11-17 20:03:39.437488: <multiprocessing.pool.MapResult object at 0x2b28bef68c50> 
+2022-11-17 20:03:39.437574: <multiprocessing.pool.MapResult object at 0x2b28bef68be0> 
+2022-11-17 20:03:39.437659: <multiprocessing.pool.MapResult object at 0x2b28befdcb38> 
+2022-11-17 20:03:39.437745: <multiprocessing.pool.MapResult object at 0x2b28befdcc88> 
+2022-11-17 20:03:39.437830: <multiprocessing.pool.MapResult object at 0x2b28befdcd68> 
+2022-11-17 20:03:39.437928: <multiprocessing.pool.MapResult object at 0x2b28befdcf60> 
+2022-11-17 20:03:39.438013: <multiprocessing.pool.MapResult object at 0x2b28befdc6a0> 
+2022-11-17 20:03:39.438100: <multiprocessing.pool.MapResult object at 0x2b28befdc7f0> 
+2022-11-17 20:03:39.438184: <multiprocessing.pool.MapResult object at 0x2b28befdc208> 
+2022-11-17 20:03:39.438269: <multiprocessing.pool.MapResult object at 0x2b28befdc4e0> 
+2022-11-17 20:03:39.438353: <multiprocessing.pool.MapResult object at 0x2b28befdc630> 
+2022-11-17 20:03:39.438438: <multiprocessing.pool.MapResult object at 0x2b28befdc0f0> 
+2022-11-17 20:03:39.438523: <multiprocessing.pool.MapResult object at 0x2b28befdc470> 
+2022-11-17 20:03:39.438608: <multiprocessing.pool.MapResult object at 0x2b28befdc0b8> 
+2022-11-17 20:03:39.438695: <multiprocessing.pool.MapResult object at 0x2b28befdca20> 
+2022-11-17 20:03:39.438781: <multiprocessing.pool.MapResult object at 0x2b28befdc978> 
+2022-11-17 20:03:39.438874: <multiprocessing.pool.MapResult object at 0x2b28befdc6d8> 
+2022-11-17 20:03:39.438963: <multiprocessing.pool.MapResult object at 0x2b28befc6748> 
+2022-11-17 20:03:39.439049: <multiprocessing.pool.MapResult object at 0x2b28befdcf98> 
+2022-11-17 20:03:39.439133: <multiprocessing.pool.MapResult object at 0x2b28befdc358> 
+2022-11-17 20:03:39.439220: <multiprocessing.pool.MapResult object at 0x2b28befc6b00> 
+2022-11-17 20:03:39.439305: <multiprocessing.pool.MapResult object at 0x2b28befc6cc0> 
+2022-11-17 20:03:39.439390: <multiprocessing.pool.MapResult object at 0x2b28befc6e10> 
+2022-11-17 20:03:39.439475: <multiprocessing.pool.MapResult object at 0x2b28befc6f98> 
+2022-11-17 20:03:39.439559: <multiprocessing.pool.MapResult object at 0x2b28befc6160> 
+2022-11-17 20:03:39.439643: <multiprocessing.pool.MapResult object at 0x2b28befc6e80> 
+2022-11-17 20:03:39.439728: <multiprocessing.pool.MapResult object at 0x2b28befc6358> 
+2022-11-17 20:03:39.439812: <multiprocessing.pool.MapResult object at 0x2b28befc61d0> 
+2022-11-17 20:03:39.439907: <multiprocessing.pool.MapResult object at 0x2b28befc62b0> 
+2022-11-17 20:03:39.439991: <multiprocessing.pool.MapResult object at 0x2b28befc6da0> 
+2022-11-17 20:03:39.440075: <multiprocessing.pool.MapResult object at 0x2b28befc6ac8> 
+2022-11-17 20:03:39.440161: <multiprocessing.pool.MapResult object at 0x2b28befc6b38> 
+2022-11-17 20:03:39.440246: <multiprocessing.pool.MapResult object at 0x2b28befc6390> 
+2022-11-17 20:03:39.440330: <multiprocessing.pool.MapResult object at 0x2b28befc6c18> 
+2022-11-17 20:03:39.440414: <multiprocessing.pool.MapResult object at 0x2b28befc64a8> 
+2022-11-17 20:03:39.440500: <multiprocessing.pool.MapResult object at 0x2b28befe24a8> 
+2022-11-17 20:03:39.440585: <multiprocessing.pool.MapResult object at 0x2b28befc6b70> 
+2022-11-17 20:03:39.440669: <multiprocessing.pool.MapResult object at 0x2b28befc68d0> 
+2022-11-17 20:03:39.440753: <multiprocessing.pool.MapResult object at 0x2b28befe2630> 
+2022-11-17 20:03:39.440838: <multiprocessing.pool.MapResult object at 0x2b28befe2a90> 
+2022-11-17 20:03:39.440933: <multiprocessing.pool.MapResult object at 0x2b28befe2b38> 
+2022-11-17 20:03:39.441018: <multiprocessing.pool.MapResult object at 0x2b28befe2eb8> 
+2022-11-17 20:03:39.441102: <multiprocessing.pool.MapResult object at 0x2b28befe2ac8> 
+2022-11-17 20:03:39.441185: <multiprocessing.pool.MapResult object at 0x2b28befe20f0> 
+2022-11-17 20:03:39.441269: <multiprocessing.pool.MapResult object at 0x2b28befe2320> 
+2022-11-17 20:03:39.441354: <multiprocessing.pool.MapResult object at 0x2b28befe2470> 
+2022-11-17 20:03:39.441438: <multiprocessing.pool.MapResult object at 0x2b28befe2208> 
+2022-11-17 20:03:39.441522: <multiprocessing.pool.MapResult object at 0x2b28befe2cc0> 
+2022-11-17 20:03:39.441606: <multiprocessing.pool.MapResult object at 0x2b28befe26d8> 
+2022-11-17 20:03:39.441690: <multiprocessing.pool.MapResult object at 0x2b28befe2fd0> 
+2022-11-17 20:03:39.441774: <multiprocessing.pool.MapResult object at 0x2b28befe2d30> 
+2022-11-17 20:03:39.441932: <multiprocessing.pool.MapResult object at 0x2b28befe29e8> 
+2022-11-17 20:03:39.442027: <multiprocessing.pool.MapResult object at 0x2b28befe22b0> 
+2022-11-17 20:03:39.442115: <multiprocessing.pool.MapResult object at 0x2b28befc4710> 
+2022-11-17 20:03:39.442200: <multiprocessing.pool.MapResult object at 0x2b28befe2358> 
+2022-11-17 20:03:39.442285: <multiprocessing.pool.MapResult object at 0x2b28befe2828> 
+2022-11-17 20:03:39.442370: <multiprocessing.pool.MapResult object at 0x2b28befc4978> 
+2022-11-17 20:03:39.442454: <multiprocessing.pool.MapResult object at 0x2b28befc4cc0> 
+2022-11-17 20:03:39.442538: <multiprocessing.pool.MapResult object at 0x2b28befc4e48> 
+2022-11-17 20:03:39.442654: <multiprocessing.pool.MapResult object at 0x2b28befc4f28> 
+2022-11-17 20:03:39.442743: <multiprocessing.pool.MapResult object at 0x2b28befc40f0> 
+2022-11-17 20:03:39.442827: <multiprocessing.pool.MapResult object at 0x2b28befc4320> 
+2022-11-17 20:03:39.442923: <multiprocessing.pool.MapResult object at 0x2b28befc43c8> 
+2022-11-17 20:03:39.443007: <multiprocessing.pool.MapResult object at 0x2b28befc4fd0> 
+2022-11-17 20:03:39.443092: <multiprocessing.pool.MapResult object at 0x2b28befc4588> 
+2022-11-17 20:03:39.443176: <multiprocessing.pool.MapResult object at 0x2b28befc4208> 
+2022-11-17 20:03:39.443260: <multiprocessing.pool.MapResult object at 0x2b28befc4c18> 
+2022-11-17 20:03:39.443344: <multiprocessing.pool.MapResult object at 0x2b28befc4e10> 
+2022-11-17 20:03:39.443431: <multiprocessing.pool.MapResult object at 0x2b28befc4080> 
+2022-11-17 20:03:39.443516: <multiprocessing.pool.MapResult object at 0x2b28befc49e8> 
+2022-11-17 20:03:39.443601: <multiprocessing.pool.MapResult object at 0x2b28befc46d8> 
+2022-11-17 20:03:39.443689: <multiprocessing.pool.MapResult object at 0x2b28befde748> 
+2022-11-17 20:03:39.443773: <multiprocessing.pool.MapResult object at 0x2b28befc4a20> 
+2022-11-17 20:03:39.443868: <multiprocessing.pool.MapResult object at 0x2b28befc4470> 
+2022-11-17 20:03:39.443954: <multiprocessing.pool.MapResult object at 0x2b28befdec50> 
+2022-11-17 20:03:39.444037: <multiprocessing.pool.MapResult object at 0x2b28befdeeb8> 
+2022-11-17 20:03:39.444121: <multiprocessing.pool.MapResult object at 0x2b28befde5f8> 
+2022-11-17 20:03:39.444206: <multiprocessing.pool.MapResult object at 0x2b28befde828> 
+2022-11-17 20:03:39.444291: <multiprocessing.pool.MapResult object at 0x2b28befde160> 
+2022-11-17 20:03:39.444375: <multiprocessing.pool.MapResult object at 0x2b28befde470> 
+2022-11-17 20:03:39.444459: <multiprocessing.pool.MapResult object at 0x2b28befde208> 
+2022-11-17 20:03:39.444545: <multiprocessing.pool.MapResult object at 0x2b28befde6a0> 
+2022-11-17 20:03:39.444631: <multiprocessing.pool.MapResult object at 0x2b28befde358> 
+2022-11-17 20:03:39.444715: <multiprocessing.pool.MapResult object at 0x2b28befde9e8> 
+2022-11-17 20:03:39.444800: <multiprocessing.pool.MapResult object at 0x2b28befde588> 
+2022-11-17 20:03:39.444893: <multiprocessing.pool.MapResult object at 0x2b28befde278> 
+2022-11-17 20:03:39.444977: <multiprocessing.pool.MapResult object at 0x2b28befde630> 
+2022-11-17 20:03:39.445061: <multiprocessing.pool.MapResult object at 0x2b28befde550> 
+2022-11-17 20:03:39.445145: <multiprocessing.pool.MapResult object at 0x2b28befde6d8> 
+2022-11-17 20:03:39.445231: <multiprocessing.pool.MapResult object at 0x2b28befd4048> 
+2022-11-17 20:03:39.445317: <multiprocessing.pool.MapResult object at 0x2b28befde2e8> 
+2022-11-17 20:03:39.445401: <multiprocessing.pool.MapResult object at 0x2b28befded30> 
+2022-11-17 20:03:39.445485: <multiprocessing.pool.MapResult object at 0x2b28befd4198> 
+2022-11-17 20:03:39.445569: <multiprocessing.pool.MapResult object at 0x2b28befd42b0> 
+2022-11-17 20:03:39.445653: <multiprocessing.pool.MapResult object at 0x2b28befd4550> 
+2022-11-17 20:03:39.445737: <multiprocessing.pool.MapResult object at 0x2b28befd4588> 
+2022-11-17 20:03:39.445822: <multiprocessing.pool.MapResult object at 0x2b28befd4978> 
+2022-11-17 20:03:39.445917: <multiprocessing.pool.MapResult object at 0x2b28befd4ba8> 
+2022-11-17 20:03:39.446001: <multiprocessing.pool.MapResult object at 0x2b28befd4dd8> 
+2022-11-17 20:03:39.446085: <multiprocessing.pool.MapResult object at 0x2b28befd4320> 
+2022-11-17 20:03:39.446168: <multiprocessing.pool.MapResult object at 0x2b28befd4da0> 
+2022-11-17 20:03:39.446253: <multiprocessing.pool.MapResult object at 0x2b28befd43c8> 
+2022-11-17 20:03:39.446337: <multiprocessing.pool.MapResult object at 0x2b28befd4f60> 
+2022-11-17 20:03:39.446420: <multiprocessing.pool.MapResult object at 0x2b28befd4a90> 
+2022-11-17 20:03:39.446503: <multiprocessing.pool.MapResult object at 0x2b28befd44a8> 
+2022-11-17 20:03:39.446587: <multiprocessing.pool.MapResult object at 0x2b28befd4780> 
+2022-11-17 20:03:39.446671: <multiprocessing.pool.MapResult object at 0x2b28befd44e0> 
+2022-11-17 20:03:39.446756: <multiprocessing.pool.MapResult object at 0x2b28befe0048> 
+2022-11-17 20:03:39.446849: <multiprocessing.pool.MapResult object at 0x2b28befd49b0> 
+2022-11-17 20:03:39.446935: <multiprocessing.pool.MapResult object at 0x2b28befd49e8> 
+2022-11-17 20:03:39.447019: <multiprocessing.pool.MapResult object at 0x2b28befe0128> 
+2022-11-17 20:03:39.447103: <multiprocessing.pool.MapResult object at 0x2b28befe02e8> 
+2022-11-17 20:03:39.447187: <multiprocessing.pool.MapResult object at 0x2b28befe0240> 
+2022-11-17 20:03:39.447271: <multiprocessing.pool.MapResult object at 0x2b28befe07f0> 
+2022-11-17 20:03:39.447355: <multiprocessing.pool.MapResult object at 0x2b28befe0668> 
+2022-11-17 20:03:39.447439: <multiprocessing.pool.MapResult object at 0x2b28befe0b00> 
+2022-11-17 20:03:39.447523: <multiprocessing.pool.MapResult object at 0x2b28befe0c88> 
+2022-11-17 20:03:39.447608: <multiprocessing.pool.MapResult object at 0x2b28befe0b70> 
+2022-11-17 20:03:39.447691: <multiprocessing.pool.MapResult object at 0x2b28befe0cf8> 
+2022-11-17 20:03:39.447776: <multiprocessing.pool.MapResult object at 0x2b28befe0ef0> 
+2022-11-17 20:03:39.447874: <multiprocessing.pool.MapResult object at 0x2b28befe0c50> 
+2022-11-17 20:03:39.447960: <multiprocessing.pool.MapResult object at 0x2b28befe0278> 
+2022-11-17 20:03:39.448044: <multiprocessing.pool.MapResult object at 0x2b28befe0630> 
+2022-11-17 20:03:39.448128: <multiprocessing.pool.MapResult object at 0x2b28befe0dd8> 
+2022-11-17 20:03:39.448211: <multiprocessing.pool.MapResult object at 0x2b28befe06a0> 
+2022-11-17 20:03:39.448295: <multiprocessing.pool.MapResult object at 0x2b28c00045c0> 
+2022-11-17 20:03:39.448381: <multiprocessing.pool.MapResult object at 0x2b28befe0be0> 
+2022-11-17 20:03:39.448465: <multiprocessing.pool.MapResult object at 0x2b28befe0fd0> 
+2022-11-17 20:03:39.448549: <multiprocessing.pool.MapResult object at 0x2b28c0004780> 
+2022-11-17 20:03:39.448633: <multiprocessing.pool.MapResult object at 0x2b28c00045f8> 
+2022-11-17 20:03:39.448717: <multiprocessing.pool.MapResult object at 0x2b28c0004c50> 
+2022-11-17 20:03:39.448801: <multiprocessing.pool.MapResult object at 0x2b28c0004d68> 
+2022-11-17 20:03:39.448895: <multiprocessing.pool.MapResult object at 0x2b28c0004f98> 
+2022-11-17 20:03:39.448980: <multiprocessing.pool.MapResult object at 0x2b28c0004160> 
+2022-11-17 20:03:39.449064: <multiprocessing.pool.MapResult object at 0x2b28c0004358> 
+2022-11-17 20:03:39.449148: <multiprocessing.pool.MapResult object at 0x2b28c0004cf8> 
+2022-11-17 20:03:39.449235: <multiprocessing.pool.MapResult object at 0x2b28c0004550> 
+2022-11-17 20:03:39.449320: <multiprocessing.pool.MapResult object at 0x2b28c00046d8> 
+2022-11-17 20:03:39.449403: <multiprocessing.pool.MapResult object at 0x2b28c00042b0> 
+2022-11-17 20:03:39.449486: <multiprocessing.pool.MapResult object at 0x2b28c0004320> 
+2022-11-17 20:03:39.449571: <multiprocessing.pool.MapResult object at 0x2b28c0004198> 
+2022-11-17 20:03:39.449654: <multiprocessing.pool.MapResult object at 0x2b28c0004978> 
+2022-11-17 20:03:39.449738: <multiprocessing.pool.MapResult object at 0x2b28c0004b70> 
+2022-11-17 20:03:39.449822: <multiprocessing.pool.MapResult object at 0x2b28bfffe048> 
+2022-11-17 20:03:39.449916: <multiprocessing.pool.MapResult object at 0x2b28c00046a0> 
+2022-11-17 20:03:39.450000: <multiprocessing.pool.MapResult object at 0x2b28c00043c8> 
+2022-11-17 20:03:39.450084: <multiprocessing.pool.MapResult object at 0x2b28bfffe240> 
+2022-11-17 20:03:39.450169: <multiprocessing.pool.MapResult object at 0x2b28bfffe5c0> 
+2022-11-17 20:03:39.450253: <multiprocessing.pool.MapResult object at 0x2b28bfffe358> 
+2022-11-17 20:03:39.450336: <multiprocessing.pool.MapResult object at 0x2b28bfffe8d0> 
+2022-11-17 20:03:39.450420: <multiprocessing.pool.MapResult object at 0x2b28bfffe5f8> 
+2022-11-17 20:03:39.450503: <multiprocessing.pool.MapResult object at 0x2b28bfffe630> 
+2022-11-17 20:03:39.450587: <multiprocessing.pool.MapResult object at 0x2b28bfffee10> 
+2022-11-17 20:03:39.450670: <multiprocessing.pool.MapResult object at 0x2b28bfffef98> 
+2022-11-17 20:03:39.450778: <multiprocessing.pool.MapResult object at 0x2b28bfffea90> 
+2022-11-17 20:03:39.450890: <multiprocessing.pool.MapResult object at 0x2b28bfffe470> 
+2022-11-17 20:03:39.450976: <multiprocessing.pool.MapResult object at 0x2b28bfffe588> 
+2022-11-17 20:03:39.451061: <multiprocessing.pool.MapResult object at 0x2b28bfffe3c8> 
+2022-11-17 20:03:39.451145: <multiprocessing.pool.MapResult object at 0x2b28bfffef60> 
+2022-11-17 20:03:39.451230: <multiprocessing.pool.MapResult object at 0x2b28bfffe550> 
+2022-11-17 20:03:39.451313: <multiprocessing.pool.MapResult object at 0x2b28bfffe898> 
+2022-11-17 20:03:39.451398: <multiprocessing.pool.MapResult object at 0x2b28c0009048> 
+2022-11-17 20:03:39.451481: <multiprocessing.pool.MapResult object at 0x2b28bfffe6d8> 
+2022-11-17 20:03:39.451565: <multiprocessing.pool.MapResult object at 0x2b28bfffee48> 
+2022-11-17 20:03:40.641807: before postprocessing..... 
+2022-11-17 20:10:11.948929: =========================
+Current lambda  0.5 
+========================= 
+2022-11-17 20:10:26.533670: 
+epoch:  951 
+2022-11-17 20:28:57.430768: train loss : -0.6109 ; target entropy : 0.0704 
+2022-11-17 20:29:21.159726: target loss: -0.4056 
+2022-11-17 20:29:21.161022: Average global foreground Dice: [0.8952673022669455, 0.7117992114626407] 
+2022-11-17 20:29:21.161163: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 20:29:22.232420: lr: 0.003494 
+2022-11-17 20:29:22.232728: This epoch took 1135.698799 s
+ 
+2022-11-17 20:29:22.232805: 
+epoch:  952 
+2022-11-17 20:46:42.406832: train loss : -0.6137 ; target entropy : 0.0717 
+2022-11-17 20:47:02.553826: target loss: -0.4845 
+2022-11-17 20:47:02.554857: Average global foreground Dice: [0.9116181988660034, 0.8366267127731887] 
+2022-11-17 20:47:02.554971: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 20:47:03.283467: lr: 0.003494 
+2022-11-17 20:47:03.283795: This epoch took 1061.050925 s
+ 
+2022-11-17 20:47:03.283873: 
+epoch:  953 
+2022-11-17 21:04:24.911301: train loss : -0.6555 ; target entropy : 0.0601 
+2022-11-17 21:04:45.028804: target loss: -0.4410 
+2022-11-17 21:04:45.030448: Average global foreground Dice: [0.9276401239996735, 0.7788375340707343] 
+2022-11-17 21:04:45.030571: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 21:04:45.800852: lr: 0.003494 
+2022-11-17 21:04:45.801232: This epoch took 1062.517301 s
+ 
+2022-11-17 21:04:45.801401: 
+epoch:  954 
+2022-11-17 21:21:58.551703: train loss : -0.6724 ; target entropy : 0.0612 
+2022-11-17 21:22:17.403071: target loss: -0.4449 
+2022-11-17 21:22:17.404506: Average global foreground Dice: [0.9008260014254486, 0.8515497840055584] 
+2022-11-17 21:22:17.404613: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 21:22:18.088424: lr: 0.003494 
+2022-11-17 21:22:18.088635: This epoch took 1052.287093 s
+ 
+2022-11-17 21:22:18.088702: 
+epoch:  955 
+2022-11-17 21:39:30.173259: train loss : -0.6967 ; target entropy : 0.0563 
+2022-11-17 21:39:49.284894: target loss: -0.5010 
+2022-11-17 21:39:49.285747: Average global foreground Dice: [0.916876924775192, 0.8815530451781931] 
+2022-11-17 21:39:49.285877: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 21:39:49.934453: lr: 0.003494 
+2022-11-17 21:39:49.934642: This epoch took 1051.845883 s
+ 
+2022-11-17 21:39:49.934704: 
+epoch:  956 
+2022-11-17 21:57:05.564277: train loss : -0.7061 ; target entropy : 0.0535 
+2022-11-17 21:57:24.661284: target loss: -0.3603 
+2022-11-17 21:57:24.662781: Average global foreground Dice: [0.9065189854928157, 0.688422642744946] 
+2022-11-17 21:57:24.663106: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 21:57:25.442288: lr: 0.003494 
+2022-11-17 21:57:25.442507: This epoch took 1055.507752 s
+ 
+2022-11-17 21:57:25.442571: 
+epoch:  957 
+2022-11-17 22:14:41.211129: train loss : -0.7178 ; target entropy : 0.0500 
+2022-11-17 22:15:00.240695: target loss: -0.4221 
+2022-11-17 22:15:00.241331: Average global foreground Dice: [0.9160376183382394, 0.7732364803042304] 
+2022-11-17 22:15:00.241436: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 22:15:00.961326: lr: 0.003494 
+2022-11-17 22:15:00.961528: This epoch took 1055.518902 s
+ 
+2022-11-17 22:15:00.961590: 
+epoch:  958 
+2022-11-17 22:32:15.877494: train loss : -0.7426 ; target entropy : 0.0481 
+2022-11-17 22:32:35.050394: target loss: -0.4687 
+2022-11-17 22:32:35.051191: Average global foreground Dice: [0.916504180165188, 0.8568912556608004] 
+2022-11-17 22:32:35.051295: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 22:32:35.790097: lr: 0.003494 
+2022-11-17 22:32:35.790385: This epoch took 1054.828739 s
+ 
+2022-11-17 22:32:35.790455: 
+epoch:  959 
+2022-11-17 22:49:51.144310: train loss : -0.7152 ; target entropy : 0.0464 
+2022-11-17 22:50:10.024828: target loss: -0.4487 
+2022-11-17 22:50:10.025906: Average global foreground Dice: [0.9209159756802731, 0.832003349045047] 
+2022-11-17 22:50:10.026036: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 22:50:10.710214: lr: 0.003494 
+2022-11-17 22:50:10.710566: This epoch took 1054.920054 s
+ 
+2022-11-17 22:50:10.710649: 
+epoch:  960 
+2022-11-17 23:07:25.812054: train loss : -0.7236 ; target entropy : 0.0502 
+2022-11-17 23:07:45.111626: target loss: -0.4157 
+2022-11-17 23:07:45.112244: Average global foreground Dice: [0.916854331771596, 0.6921733847915771] 
+2022-11-17 23:07:45.112345: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 23:07:45.771161: lr: 0.003494 
+2022-11-17 23:07:45.771377: This epoch took 1055.060662 s
+ 
+2022-11-17 23:07:45.771446: 
+epoch:  961 
+2022-11-17 23:25:00.949128: train loss : -0.7205 ; target entropy : 0.0481 
+2022-11-17 23:25:19.739962: target loss: -0.3041 
+2022-11-17 23:25:19.741185: Average global foreground Dice: [0.9117338895357117, 0.646043294020464] 
+2022-11-17 23:25:19.741300: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 23:25:20.446078: lr: 0.003494 
+2022-11-17 23:25:20.446355: This epoch took 1054.674855 s
+ 
+2022-11-17 23:25:20.446420: 
+epoch:  962 
+2022-11-17 23:42:45.907236: train loss : -0.7406 ; target entropy : 0.0462 
+2022-11-17 23:43:06.230973: target loss: -0.4540 
+2022-11-17 23:43:06.231957: Average global foreground Dice: [0.9216372837578256, 0.8896830067590213] 
+2022-11-17 23:43:06.232094: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-17 23:43:06.956717: lr: 0.003494 
+2022-11-17 23:43:06.956965: This epoch took 1066.510487 s
+ 
+2022-11-17 23:43:06.957045: 
+epoch:  963 
+2022-11-18 00:00:31.093251: train loss : -0.7446 ; target entropy : 0.0448 
+2022-11-18 00:00:51.415169: target loss: -0.4635 
+2022-11-18 00:00:51.416004: Average global foreground Dice: [0.9184378670185743, 0.9221866647812841] 
+2022-11-18 00:00:51.416131: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 00:00:52.138331: lr: 0.003494 
+2022-11-18 00:00:52.139513: This epoch took 1065.182403 s
+ 
+2022-11-18 00:00:52.139633: 
+epoch:  964 
+2022-11-18 00:18:17.858989: train loss : -0.7449 ; target entropy : 0.0449 
+2022-11-18 00:18:37.694432: target loss: -0.4136 
+2022-11-18 00:18:37.701854: Average global foreground Dice: [0.9097194366606319, 0.8549500936964004] 
+2022-11-18 00:18:37.702022: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 00:18:38.459092: lr: 0.003494 
+2022-11-18 00:18:38.459332: This epoch took 1066.319639 s
+ 
+2022-11-18 00:18:38.459402: 
+epoch:  965 
+2022-11-18 00:36:06.191854: train loss : -0.7507 ; target entropy : 0.0416 
+2022-11-18 00:36:26.551908: target loss: -0.4067 
+2022-11-18 00:36:26.552999: Average global foreground Dice: [0.9050394898202025, 0.8759450259133121] 
+2022-11-18 00:36:26.553137: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 00:36:27.335107: lr: 0.003494 
+2022-11-18 00:36:27.335457: This epoch took 1068.875999 s
+ 
+2022-11-18 00:36:27.335523: 
+epoch:  966 
+2022-11-18 00:53:55.886983: train loss : -0.7691 ; target entropy : 0.0438 
+2022-11-18 00:54:15.483726: target loss: -0.4472 
+2022-11-18 00:54:15.485254: Average global foreground Dice: [0.9208851859032849, 0.878413415931147] 
+2022-11-18 00:54:15.485404: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 00:54:16.238213: lr: 0.003494 
+2022-11-18 00:54:16.238462: This epoch took 1068.902885 s
+ 
+2022-11-18 00:54:16.238673: 
+epoch:  967 
+2022-11-18 01:11:41.663255: train loss : -0.7601 ; target entropy : 0.0403 
+2022-11-18 01:12:01.818208: target loss: -0.4543 
+2022-11-18 01:12:01.819610: Average global foreground Dice: [0.9086326982642817, 0.8861729244644981] 
+2022-11-18 01:12:01.819824: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 01:12:02.534999: lr: 0.003494 
+2022-11-18 01:12:02.535253: This epoch took 1066.296516 s
+ 
+2022-11-18 01:12:02.535323: 
+epoch:  968 
+2022-11-18 01:29:31.396910: train loss : -0.7621 ; target entropy : 0.0416 
+2022-11-18 01:29:51.631983: target loss: -0.4513 
+2022-11-18 01:29:51.633553: Average global foreground Dice: [0.9231856553099167, 0.9131327929604076] 
+2022-11-18 01:29:51.633680: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 01:29:52.361171: lr: 0.003494 
+2022-11-18 01:29:52.361426: This epoch took 1069.826047 s
+ 
+2022-11-18 01:29:52.361493: 
+epoch:  969 
+2022-11-18 01:47:20.018223: train loss : -0.7620 ; target entropy : 0.0402 
+2022-11-18 01:47:40.008749: target loss: -0.4200 
+2022-11-18 01:47:40.011039: Average global foreground Dice: [0.9168845749221799, 0.8507056029401399] 
+2022-11-18 01:47:40.011165: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 01:47:40.810547: lr: 0.003494 
+2022-11-18 01:47:40.810796: This epoch took 1068.449246 s
+ 
+2022-11-18 01:47:40.810892: 
+epoch:  970 
+2022-11-18 02:05:09.507774: train loss : -0.7684 ; target entropy : 0.0384 
+2022-11-18 02:05:30.246591: target loss: -0.4531 
+2022-11-18 02:05:30.247360: Average global foreground Dice: [0.9149731130749642, 0.8822686402198074] 
+2022-11-18 02:05:30.247467: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 02:05:30.977210: lr: 0.003494 
+2022-11-18 02:05:30.977548: This epoch took 1070.166596 s
+ 
+2022-11-18 02:05:30.977635: 
+epoch:  971 
+2022-11-18 02:22:58.538769: train loss : -0.7574 ; target entropy : 0.0378 
+2022-11-18 02:23:18.947507: target loss: -0.4591 
+2022-11-18 02:23:18.948156: Average global foreground Dice: [0.9187134853557956, 0.9225008445469562] 
+2022-11-18 02:23:18.948259: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 02:23:19.704237: lr: 0.003494 
+2022-11-18 02:23:19.704450: This epoch took 1068.726759 s
+ 
+2022-11-18 02:23:19.704516: 
+epoch:  972 
+2022-11-18 02:40:50.499738: train loss : -0.7649 ; target entropy : 0.0394 
+2022-11-18 02:41:11.072553: target loss: -0.4179 
+2022-11-18 02:41:11.073474: Average global foreground Dice: [0.9128198713702049, 0.822315942341494] 
+2022-11-18 02:41:11.073603: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 02:41:11.823047: lr: 0.003494 
+2022-11-18 02:41:11.823338: This epoch took 1072.118762 s
+ 
+2022-11-18 02:41:11.823418: 
+epoch:  973 
+2022-11-18 02:58:41.766339: train loss : -0.7570 ; target entropy : 0.0360 
+2022-11-18 02:59:01.154424: target loss: -0.4115 
+2022-11-18 02:59:01.155245: Average global foreground Dice: [0.912790485375761, 0.8796091189200592] 
+2022-11-18 02:59:01.155382: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 02:59:01.864732: lr: 0.003494 
+2022-11-18 02:59:01.864963: This epoch took 1070.041487 s
+ 
+2022-11-18 02:59:01.865028: 
+epoch:  974 
+2022-11-18 03:16:32.068448: train loss : -0.7768 ; target entropy : 0.0382 
+2022-11-18 03:16:52.890546: target loss: -0.4629 
+2022-11-18 03:16:52.899805: Average global foreground Dice: [0.91067521029003, 0.9054781055760049] 
+2022-11-18 03:16:52.900815: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 03:16:53.639539: lr: 0.003494 
+2022-11-18 03:16:53.639783: This epoch took 1071.774700 s
+ 
+2022-11-18 03:16:53.639860: 
+epoch:  975 
+2022-11-18 03:34:23.573077: train loss : -0.7623 ; target entropy : 0.0363 
+2022-11-18 03:34:43.669826: target loss: -0.4378 
+2022-11-18 03:34:43.670615: Average global foreground Dice: [0.914600235384059, 0.9023357658840003] 
+2022-11-18 03:34:43.670746: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 03:34:44.389320: lr: 0.003494 
+2022-11-18 03:34:44.389766: This epoch took 1070.749845 s
+ 
+2022-11-18 03:34:44.389881: 
+epoch:  976 
+2022-11-18 03:52:14.309379: train loss : -0.7763 ; target entropy : 0.0361 
+2022-11-18 03:52:34.488748: target loss: -0.4497 
+2022-11-18 03:52:34.489503: Average global foreground Dice: [0.9221111737802884, 0.9064282200253823] 
+2022-11-18 03:52:34.490756: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 03:52:35.240161: lr: 0.003494 
+2022-11-18 03:52:35.240385: This epoch took 1070.850434 s
+ 
+2022-11-18 03:52:35.240457: 
+epoch:  977 
+2022-11-18 04:10:03.735167: train loss : -0.7759 ; target entropy : 0.0346 
+2022-11-18 04:10:24.131291: target loss: -0.4493 
+2022-11-18 04:10:24.131934: Average global foreground Dice: [0.91622244853244, 0.9338576973685792] 
+2022-11-18 04:10:24.132053: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 04:10:24.871542: lr: 0.003494 
+2022-11-18 04:10:24.871832: This epoch took 1069.631318 s
+ 
+2022-11-18 04:10:24.871914: 
+epoch:  978 
+2022-11-18 04:27:51.590316: train loss : -0.7827 ; target entropy : 0.0353 
+2022-11-18 04:28:12.448483: target loss: -0.4520 
+2022-11-18 04:28:12.449439: Average global foreground Dice: [0.9152745858026532, 0.9071178090218506] 
+2022-11-18 04:28:12.449562: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 04:28:13.143547: lr: 0.003494 
+2022-11-18 04:28:13.143803: This epoch took 1068.271832 s
+ 
+2022-11-18 04:28:13.143880: 
+epoch:  979 
+2022-11-18 04:45:41.988124: train loss : -0.7765 ; target entropy : 0.0335 
+2022-11-18 04:46:01.712823: target loss: -0.4448 
+2022-11-18 04:46:01.713642: Average global foreground Dice: [0.9197179667497734, 0.920209721357156] 
+2022-11-18 04:46:01.713752: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 04:46:02.394583: lr: 0.003494 
+2022-11-18 04:46:02.394856: This epoch took 1069.250921 s
+ 
+2022-11-18 04:46:02.394928: 
+epoch:  980 
+2022-11-18 05:03:34.380634: train loss : -0.7746 ; target entropy : 0.0381 
+2022-11-18 05:03:54.517431: target loss: -0.4802 
+2022-11-18 05:03:54.518196: Average global foreground Dice: [0.919933758943585, 0.9236781901067797] 
+2022-11-18 05:03:54.518317: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 05:03:55.245211: lr: 0.003494 
+2022-11-18 05:03:55.245505: This epoch took 1072.850518 s
+ 
+2022-11-18 05:03:55.245577: 
+epoch:  981 
+2022-11-18 05:21:28.232182: train loss : -0.7777 ; target entropy : 0.0338 
+2022-11-18 05:21:47.620021: target loss: -0.4037 
+2022-11-18 05:21:47.620813: Average global foreground Dice: [0.9126340190165629, 0.8869248586968114] 
+2022-11-18 05:21:47.620975: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 05:21:48.319991: lr: 0.003494 
+2022-11-18 05:21:48.320463: This epoch took 1073.074828 s
+ 
+2022-11-18 05:21:48.320545: 
+epoch:  982 
+2022-11-18 05:39:19.390510: train loss : -0.7853 ; target entropy : 0.0347 
+2022-11-18 05:39:39.792308: target loss: -0.3971 
+2022-11-18 05:39:39.793303: Average global foreground Dice: [0.9164645871232125, 0.9184789114849106] 
+2022-11-18 05:39:39.793426: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 05:39:40.502942: lr: 0.003494 
+2022-11-18 05:39:40.503163: This epoch took 1072.182562 s
+ 
+2022-11-18 05:39:40.503230: 
+epoch:  983 
+2022-11-18 05:57:10.624973: train loss : -0.7807 ; target entropy : 0.0339 
+2022-11-18 05:57:30.796307: target loss: -0.5028 
+2022-11-18 05:57:30.797225: Average global foreground Dice: [0.9205422808784768, 0.9156083446495291] 
+2022-11-18 05:57:30.797353: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 05:57:31.507830: lr: 0.003494 
+2022-11-18 05:57:31.508046: This epoch took 1071.004761 s
+ 
+2022-11-18 05:57:31.508110: 
+epoch:  984 
+2022-11-18 06:15:05.214625: train loss : -0.7990 ; target entropy : 0.0317 
+2022-11-18 06:15:26.761222: target loss: -0.4236 
+2022-11-18 06:15:26.762396: Average global foreground Dice: [0.9165796219381851, 0.9191732929267812] 
+2022-11-18 06:15:26.762554: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 06:15:27.494234: lr: 0.003494 
+2022-11-18 06:15:27.494460: This epoch took 1075.986296 s
+ 
+2022-11-18 06:15:27.494529: 
+epoch:  985 
+2022-11-18 06:32:57.256739: train loss : -0.7713 ; target entropy : 0.0329 
+2022-11-18 06:33:17.507331: target loss: -0.4245 
+2022-11-18 06:33:17.507953: Average global foreground Dice: [0.9150860893344603, 0.8809956099469626] 
+2022-11-18 06:33:17.508054: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 06:33:18.234019: lr: 0.003494 
+2022-11-18 06:33:18.234307: This epoch took 1070.739724 s
+ 
+2022-11-18 06:33:18.234384: 
+epoch:  986 
+2022-11-18 06:50:52.063205: train loss : -0.7822 ; target entropy : 0.0333 
+2022-11-18 06:51:11.106414: target loss: -0.4207 
+2022-11-18 06:51:11.107159: Average global foreground Dice: [0.9166825358111793, 0.9136905100725295] 
+2022-11-18 06:51:11.107283: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 06:51:11.864370: lr: 0.003494 
+2022-11-18 06:51:11.864586: This epoch took 1073.630147 s
+ 
+2022-11-18 06:51:11.864658: 
+epoch:  987 
+2022-11-18 07:08:43.150053: train loss : -0.7762 ; target entropy : 0.0333 
+2022-11-18 07:09:02.767003: target loss: -0.3767 
+2022-11-18 07:09:02.767668: Average global foreground Dice: [0.9122988614164668, 0.8873233804692298] 
+2022-11-18 07:09:02.767769: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 07:09:03.516792: lr: 0.003494 
+2022-11-18 07:09:03.517087: This epoch took 1071.652371 s
+ 
+2022-11-18 07:09:03.517163: 
+epoch:  988 
+2022-11-18 07:26:37.010896: train loss : -0.7794 ; target entropy : 0.0341 
+2022-11-18 07:26:57.308425: target loss: -0.4221 
+2022-11-18 07:26:57.309043: Average global foreground Dice: [0.9140045683169146, 0.904751845261562] 
+2022-11-18 07:26:57.309147: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 07:26:58.025197: lr: 0.003494 
+2022-11-18 07:26:58.025882: This epoch took 1074.508655 s
+ 
+2022-11-18 07:26:58.026079: 
+epoch:  989 
+2022-11-18 07:44:30.969637: train loss : -0.7929 ; target entropy : 0.0379 
+2022-11-18 07:44:51.225264: target loss: -0.4866 
+2022-11-18 07:44:51.226993: Average global foreground Dice: [0.9138868816298199, 0.9073839693724989] 
+2022-11-18 07:44:51.227151: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 07:44:51.983262: lr: 0.003494 
+2022-11-18 07:44:51.983670: This epoch took 1073.957446 s
+ 
+2022-11-18 07:44:51.983760: 
+epoch:  990 
+2022-11-18 08:02:27.260975: train loss : -0.7839 ; target entropy : 0.0363 
+2022-11-18 08:02:47.540138: target loss: -0.3876 
+2022-11-18 08:02:47.540919: Average global foreground Dice: [0.913405737077653, 0.8544950393773058] 
+2022-11-18 08:02:47.541051: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 08:02:48.259369: lr: 0.003494 
+2022-11-18 08:02:48.259621: This epoch took 1076.275792 s
+ 
+2022-11-18 08:02:48.259690: 
+epoch:  991 
+2022-11-18 08:20:23.536945: train loss : -0.7936 ; target entropy : 0.0314 
+2022-11-18 08:20:43.794145: target loss: -0.4479 
+2022-11-18 08:20:43.794763: Average global foreground Dice: [0.922960227305526, 0.9103765791252219] 
+2022-11-18 08:20:43.803465: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 08:20:44.538181: lr: 0.003494 
+2022-11-18 08:20:44.538464: This epoch took 1076.278716 s
+ 
+2022-11-18 08:20:44.538544: 
+epoch:  992 
+2022-11-18 08:38:17.819281: train loss : -0.7793 ; target entropy : 0.0317 
+2022-11-18 08:38:38.488583: target loss: -0.3964 
+2022-11-18 08:38:38.489433: Average global foreground Dice: [0.9147531610699462, 0.9079242865049706] 
+2022-11-18 08:38:38.489557: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 08:38:39.212253: lr: 0.003494 
+2022-11-18 08:38:39.212587: This epoch took 1074.673980 s
+ 
+2022-11-18 08:38:39.212667: 
+epoch:  993 
+2022-11-18 08:56:11.924815: train loss : -0.7884 ; target entropy : 0.0304 
+2022-11-18 08:56:32.163732: target loss: -0.4728 
+2022-11-18 08:56:32.164894: Average global foreground Dice: [0.9180891496072006, 0.925992504984777] 
+2022-11-18 08:56:32.165067: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 08:56:32.931091: lr: 0.003494 
+2022-11-18 08:56:32.931495: This epoch took 1073.718767 s
+ 
+2022-11-18 08:56:32.931577: 
+epoch:  994 
+2022-11-18 09:14:07.974998: train loss : -0.7879 ; target entropy : 0.0320 
+2022-11-18 09:14:28.245235: target loss: -0.4279 
+2022-11-18 09:14:28.246928: Average global foreground Dice: [0.9167048543455957, 0.9122115269393708] 
+2022-11-18 09:14:28.247042: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 09:14:28.953299: lr: 0.003494 
+2022-11-18 09:14:28.953689: This epoch took 1076.022056 s
+ 
+2022-11-18 09:14:28.953766: 
+epoch:  995 
+2022-11-18 09:32:01.856279: train loss : -0.8001 ; target entropy : 0.0295 
+2022-11-18 09:32:23.019980: target loss: -0.3952 
+2022-11-18 09:32:23.020914: Average global foreground Dice: [0.9175116463397441, 0.9049200021150209] 
+2022-11-18 09:32:23.021028: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 09:32:23.730786: lr: 0.003494 
+2022-11-18 09:32:23.731184: This epoch took 1074.777363 s
+ 
+2022-11-18 09:32:23.731259: 
+epoch:  996 
+2022-11-18 09:49:48.634360: train loss : -0.8007 ; target entropy : 0.0322 
+2022-11-18 09:50:07.338875: target loss: -0.3663 
+2022-11-18 09:50:07.340888: Average global foreground Dice: [0.9115501555799631, 0.8656886825758088] 
+2022-11-18 09:50:07.341065: (interpret this as an estimate for the Dice of the different classes. This is not exact.) 
+2022-11-18 09:50:08.040005: lr: 0.003494 
+2022-11-18 09:50:08.040362: This epoch took 1064.309045 s
+ 
+2022-11-18 09:50:08.040524: 
+epoch:  997 
