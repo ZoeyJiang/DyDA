@@ -6,7 +6,7 @@ The code was implemented based on the nnU-Net. Therefore, in order to better und
 
 ## Preprocess
 run **run_preprocess.sh** file in the experiment_planning folder.
-**!!! NOTE**: organize your dataset following the rules of nnU-Net.
++ **!!! NOTE**: organize your dataset following the rules of nnU-Net.
 
 ## Train the model 
 run **run.sh or the run_traing.py** file in the run folder.
