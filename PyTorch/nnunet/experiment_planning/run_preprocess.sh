@@ -11,5 +11,5 @@ export CUDA_VISIBLE_DEVICES="1"
 #python ./nnUNet_plan_and_preprocess.py -pl2d None  # 强制不用2维方法
 conda info -e
 conda list
- python ./nnUNet_plan_and_preprocess.py -pl3d None  # 强制不用3维方法
+python ./nnUNet_plan_and_preprocess.py -pl3d None  # 强制不用3维方法
 
